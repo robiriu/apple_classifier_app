@@ -85,7 +85,7 @@ apple_classifier_app/
 
 ## Demo
 
-🎥 Watch the demo here: [Google Drive Demo Video](https://drive.google.com/your_demo_video_link_here)
+🎥 Watch the demo here: [Google Drive Demo Video](https://drive.google.com/file/d/19Pf7F6G4g97N-JogDjM3bl2x2ID2eyYf/view?usp=sharing)
 
 ## Contributions
 
