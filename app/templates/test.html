@@ -1,0 +1,51 @@
+<!-- templates/test.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Classifier</title>
+</head>
+
+<body>
+    <h1>Apple Detection and Cropping</h1>
+
+    <!-- Form to upload image -->
+    <form action="/detect/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required />
+        <button type="submit">Upload and Detect</button>
+    </form>
+
+    <br>
+
+    <!-- Display result after detection -->
+    <div id="result"></div>
+
+    <script>
+        // Handle form submission and display result dynamically
+        document.querySelector('form').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const response = await fetch('/detect/', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await response.json();
+
+            if (data.results) {
+                document.getElementById('result').innerHTML = `
+                    <h2>Detection Completed</h2>
+                    <p><strong>Original Image:</strong><br><img src="${data.results.file}" width="300" /></p>
+                    <!-- <p><strong>Cropped Image:</strong><br><img src="${data.results.cropped_image}" width="300" /></p> -->
+                `;
+            } else {
+                document.getElementById('result').innerText = 'Error during detection';
+            }
+        });
+    </script>
+</body>
+
+</html>
