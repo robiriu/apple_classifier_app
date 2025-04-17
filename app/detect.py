@@ -5,7 +5,7 @@ from PIL import Image
 from collections import defaultdict
 
 # Your Roboflow API key and model ID
-ROBOFLOW_API_KEY = "TEHGbI0CKnrNwwzAMJPl"
+ROBOFLOW_API_KEY = "Your Roboflow API key" # Use your Roboflow API key
 ROBOFLOW_MODEL_ID = "apple-detection_0630/6"
 ROBOFLOW_API_URL = f"https://detect.roboflow.com/{ROBOFLOW_MODEL_ID}?api_key={ROBOFLOW_API_KEY}"
 
